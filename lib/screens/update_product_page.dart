@@ -40,7 +40,7 @@ class _UpdateProductPageState extends State<UpdateProductPage> {
           child: SingleChildScrollView(
             child: Column(
               children: [
-                SizedBox(
+                const SizedBox(
                   height: 100,
                 ),
                 CustomTextFiled(
@@ -49,7 +49,7 @@ class _UpdateProductPageState extends State<UpdateProductPage> {
                   },
                   hintText: 'Product Name',
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
                 CustomTextFiled(
@@ -58,7 +58,7 @@ class _UpdateProductPageState extends State<UpdateProductPage> {
                   },
                   hintText: 'description',
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
                 CustomTextFiled(
@@ -68,14 +68,14 @@ class _UpdateProductPageState extends State<UpdateProductPage> {
                   hintText: 'price',
                   inputType: TextInputType.number,
                 ),
-                SizedBox(height: 10),
+                const SizedBox(height: 10),
                 CustomTextFiled(
                   onChanged: (data) {
                     image = data;
                   },
                   hintText: 'image',
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 50,
                 ),
                 CustomButton(

@@ -5,7 +5,9 @@ import 'package:store_app/services/get_all_product_service.dart';
 import 'package:store_app/widgets/custom_card.dart';
 
 class HomePage extends StatelessWidget {
-  const HomePage({Key? key});
+  const HomePage({
+    super.key,
+  });
   static String id = 'HomePage';
   @override
   Widget build(BuildContext context) {
@@ -38,8 +40,8 @@ class HomePage extends StatelessWidget {
                 gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 2,
                   childAspectRatio: 1.5,
-                  crossAxisSpacing: 10,
-                  mainAxisSpacing: 70,
+                  crossAxisSpacing: 10.0,
+                  mainAxisSpacing: 70.0,
                 ),
                 itemBuilder: (context, index) {
                   return CustomCard(
@@ -47,8 +49,15 @@ class HomePage extends StatelessWidget {
                   );
                 },
               );
+            } else if (snapshot.hasError) {
+              return Center(
+                child: Text(
+                  'Error: ${snapshot.error}',
+                  style: const TextStyle(color: Colors.red),
+                ),
+              );
             } else {
-              return Center(child: CircularProgressIndicator());
+              return const Center(child: CircularProgressIndicator());
             }
           },
         ),

@@ -36,7 +36,6 @@ class Api {
     );
     if (response.statusCode == 200) {
       Map<String, dynamic> data = jsonDecode(response.body);
-      print(data);
       return data;
     } else {
       throw Exception(
